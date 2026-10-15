@@ -1,0 +1,6 @@
+{
+  "name": "Word Studio 365 Pro",
+  "description": "Suite ofimática avanzada con editor de texto estilo Word, soporte .docx, almacenamiento local y en la nube (Google Drive, OneDrive, Dropbox), scripts de automatización, extensiones, colaboración en tiempo real y modo oscuro.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

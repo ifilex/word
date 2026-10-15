@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+@layer utilities {
+  /* Hide scrollbars when desired */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Office Fluent Desktop Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+  background-clip: content-box;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+  background-clip: content-box;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+  background-clip: content-box;
+}
+
+/* Native selection highlighting */
+::selection {
+  background-color: #b4d5fe;
+  color: #0f172a;
+}
+
+.dark ::selection {
+  background-color: #1e3a8a;
+  color: #f8fafc;
+}
+
+/* Print Optimization & High-Fidelity Paper Engine */
+@media print {
+  @page {
+    margin: 15mm 15mm 15mm 15mm;
+    size: auto;
+  }
+
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    height: auto !important;
+    min-height: auto !important;
+    overflow: visible !important;
+    font-size: 11pt !important;
+  }
+
+  #root,
+  #app-root,
+  #document-scroll-viewport,
+  #word-page-scaler {
+    display: block !important;
+    height: auto !important;
+    min-height: auto !important;
+    overflow: visible !important;
+    position: static !important;
+    transform: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  #word-paper-sheet {
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  /* Page Break Handling */
+  .page-break {
+    page-break-after: always !important;
+    break-after: page !important;
+    border: none !important;
+    font-size: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    visibility: hidden !important;
+  }
+
+  /* Tables in Print */
+  table {
+    page-break-inside: auto !important;
+    width: 100% !important;
+  }
+  tr {
+    page-break-inside: avoid !important;
+    page-break-after: auto !important;
+  }
+  thead {
+    display: table-header-group !important;
+  }
+  tfoot {
+    display: table-footer-group !important;
+  }
+
+  /* Avoid orphan headings */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+
+  /* Hide all UI elements, ribbons, bars, sidebars, modals, floating menus */
+  #word-title-bar,
+  #word-ribbon-container,
+  #word-status-bar,
+  #top-ruler-container,
+  #doc-floating-toolbar,
+  #doc-comments-sidebar,
+  #comments-sidebar-panel,
+  #doc-nav-pane,
+  #modal-print-studio,
+  #modal-office-backstage,
+  #modal-cloud-sync-center,
+  #modal-script-editor,
+  #modal-extensions-hub,
+  #modal-find-replace,
+  #modal-share-collaboration,
+  #modal-word-stats,
+  #modal-version-history,
+  #modal-symbol-picker,
+  #widget-read-aloud,
+  .no-print {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
